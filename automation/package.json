@@ -1,0 +1,15 @@
+{
+  "name": "order-system-automation",
+  "version": "1.0.0",
+  "description": "J&T Express booking automation",
+  "scripts": {
+    "booking": "node jt_booking.js",
+    "booking:single": "node jt_booking.js --orderId",
+    "booking:bulk": "node jt_booking.js --bulk"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^16.6.1",
+    "playwright": "^1.56.1"
+  }
+}

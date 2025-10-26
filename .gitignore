@@ -1,0 +1,28 @@
+node_modules/
+dist/
+.env
+*.log
+.env.local
+*.DS_Store
+.vscode/
+.idea/
+coverage/
+*.local
+package-lock.json
+yarn.lock
+
+# Automation
+automation/.env
+automation/node_modules/
+automation/*.log
+automation/screenshots/
+automation/booking-*.png
+
+# Build artifacts
+build/
+out/
+.next/
+
+# Environment and config
+config/local.json
+*.config.local.js

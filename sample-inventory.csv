@@ -1,0 +1,6 @@
+ProductID,Name,Description,Category,Size,Price,Stock,QRCodeURL
+PROD-001,T-Shirt Blue,Cotton T-Shirt - Blue,Clothing,M,299,50,https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=order-system.com/order?id=PROD-001
+PROD-002,T-Shirt Red,Cotton T-Shirt - Red,Clothing,M,299,50,https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=order-system.com/order?id=PROD-002
+PROD-003,Jeans Blue,Classic Blue Jeans,Clothing,32,899,30,https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=order-system.com/order?id=PROD-003
+PROD-004,Jacket Black,Winter Jacket - Black,Clothing,L,1499,15,https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=order-system.com/order?id=PROD-004
+PROD-005,Shoes White,Canvas Shoes - White,Footwear,42,599,25,https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=order-system.com/order?id=PROD-005

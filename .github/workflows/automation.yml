@@ -1,0 +1,55 @@
+name: Run J&T Booking Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      orderIds:
+        description: 'Comma-separated order IDs (optional)'
+        required: false
+        type: string
+      mode:
+        description: 'Mode'
+        required: true
+        type: choice
+        options:
+          - single
+          - bulk
+
+jobs:
+  booking:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Playwright
+        run: |
+          cd automation
+          npm ci
+          npx playwright install chromium
+
+      - name: Run automation
+        working-directory: automation
+        run: |
+          if [ "${{ inputs.mode }}" == "single" ]; then
+            node jt_booking.js --orderId=${{ inputs.orderIds }}
+          else
+            node jt_booking.js --bulk
+          fi
+        env:
+          APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
+          JNTT_USERNAME: ${{ secrets.JNTT_USERNAME }}
+          JNTT_PASSWORD: ${{ secrets.JNTT_PASSWORD }}
+          SHOP_NAME: ${{ secrets.SHOP_NAME }}
+          SHOP_CONTACT: ${{ secrets.SHOP_CONTACT }}
+          SHOP_ADDRESS: ${{ secrets.SHOP_ADDRESS }}
+          SHOP_PROVINCE: ${{ secrets.SHOP_PROVINCE }}
+          SHOP_CITY: ${{ secrets.SHOP_CITY }}
+          SHOP_BARANGAY: ${{ secrets.SHOP_BARANGAY }}
