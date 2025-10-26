@@ -133,7 +133,7 @@ export const getAddresses = async (level, parentId = '') => {
     }
 
     const response = await api.get('', { params });
-    const addressData = response.data?.data || [];
+    const addressData = response.data?.data?.records || [];
 
     // Cache the response
     if (addressData.length > 0) {
